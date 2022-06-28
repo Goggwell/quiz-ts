@@ -3,7 +3,7 @@ import DifficultyList from "../DifficultyList/DifficultyList";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <h2>Welcome to my OpenTDB quiz!</h2>
       <p>
         This quiz will consist of 10 questions, but there is no time limit so
@@ -13,7 +13,7 @@ const Header = () => {
         Select a difficulty below to get started:
       </p>
       <DifficultyList />
-    </div>
+    </header>
   );
 };
 
