@@ -7,6 +7,7 @@ const Container = (props: any) => {
   const { theme, setTheme } = useTheme();
   const { children } = props;
 
+  // wait for component to mount
   useEffect(() => setMounted(true), []);
 
   return (
@@ -19,6 +20,7 @@ const Container = (props: any) => {
             className={styles.theme_toggle}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
+            {/** wait until mounted before allowing theme rendering to avoid hydration mismatch */}
             {mounted && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,9 @@ export default function Questions() {
   const [number, setNumber] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
+  // init game configs and start game
   const startQuiz = async () => {
+    // waits for questions to be fetched, and displays an error if not resolved
     try {
       setLoading(true);
       setGameOver(false);
@@ -22,6 +24,7 @@ export default function Questions() {
     }
   };
 
+  // runs async function upon loading
   useEffect(() => {
     startQuiz();
   }, []);

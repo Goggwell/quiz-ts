@@ -1,5 +1,6 @@
 import { shuffleArray } from "../../utils/shuffleArray";
 
+// question type for handling data response from API
 export type Question = {
   category: string;
   type: string;
@@ -9,14 +10,18 @@ export type Question = {
   incorrect_answers: string[];
 };
 
+// QuestionState 'intersection' type that takes a question and a string array of answers
+// API returns correct and incorrect answers separately, however our data needs to exist within same array to shuffle all answers
 export type QuestionState = Question & { answers: string[] };
 
+// define difficulty cases
 export enum Difficulty {
   EASY = "easy",
   MEDIUM = "medium",
   HARD = "hard",
 }
 
+// fetches mapped data as a new QuestionState, with the answers shuffled
 export const fetchQuestions = async (
   difficulty: Difficulty
 ): Promise<QuestionState[]> => {
