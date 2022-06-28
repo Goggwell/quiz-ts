@@ -3,6 +3,7 @@ import { useQuizDifficulty } from "../../hooks/useQuizDifficulty";
 import Router from "next/router";
 
 const DifficultyButton = (props: any) => {
+  // using hook to grab state and actions from our store
   const [state, actions] = useQuizDifficulty();
   const goToQuestionsPage = () => {
     Router.push("/questions");
