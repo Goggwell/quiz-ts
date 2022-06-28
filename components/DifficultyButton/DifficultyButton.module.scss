@@ -20,6 +20,17 @@
     transform: scale(1.02);
   }
 
+  @media (max-width: 600px) {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+
+    p {
+      display: none;
+    }
+  }
+
   h4,
   p {
     color: #fff;

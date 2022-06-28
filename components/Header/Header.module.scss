@@ -23,4 +23,18 @@
     font-size: 1rem;
     font-weight: 300;
   }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 1.75rem;
+      margin: 0;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 85%;
+    }
+
+    p {
+      width: 90%;
+    }
+  }
 }
