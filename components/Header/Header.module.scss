@@ -1,0 +1,26 @@
+//Header.module.scss
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h2,
+  p {
+    color: var(--text);
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+  }
+
+  p {
+    width: 85%;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}

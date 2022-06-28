@@ -1,0 +1,10 @@
+//DifficulyList.module.scss
+
+.difficulty_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 550px;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}

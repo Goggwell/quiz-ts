@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Inter";
+  font-style: "normal";
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/Inter-var.woff2) format(woff2);
+}
+
+html,
+body {
+  background: var(--bg);
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  transition: background 200ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fbf7f4;
+  --bg-rgb: 251, 247, 244;
+  --text: #000a38;
+  --text-rgb: 0, 10, 56;
+}
+
+[data-theme="dark"] {
+  --bg: #000a38;
+  --bg-rgb: 0, 10, 56;
+  --text: #fbf7f4;
+  --text-rgb: 251, 247, 244;
+}

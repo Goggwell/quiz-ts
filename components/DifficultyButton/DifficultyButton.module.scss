@@ -1,0 +1,47 @@
+//DifficultyButton.module.scss
+
+.difficulty_button {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  font-family: "Inter", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: ease 200ms;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  h4,
+  p {
+    color: #fff;
+    margin: 0;
+    width: 100%;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+
+  &:nth-child(1) {
+    background-color: #fbab7e;
+    background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  }
+  &:nth-child(2) {
+    background-color: #8ec5fc;
+    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  }
+  &:nth-child(3) {
+    background-color: #8bc6ec;
+    background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  }
+}
