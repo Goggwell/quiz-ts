@@ -7,6 +7,8 @@ import {
   AnswerType,
 } from "../components/QuestionCard/QuestionCard";
 import { Result } from "../components/Result/Result";
+import styles from "./styles/Questions.module.scss";
+import ArrowRight from "../components/ArrowRight/ArrowRight";
 
 const TOTAL_QUESTIONS = 10;
 
@@ -66,7 +68,14 @@ export default function Questions() {
 
   return (
     <Container>
-      {!gameStarted ? <button onClick={startQuiz}>START QUIZ</button> : null}
+      {!gameStarted ? (
+        <div className={styles.question_header}>
+          <h2>Click the button below once you are ready</h2>
+          <button className={styles.question_header__btn} onClick={startQuiz}>
+            START QUIZ
+          </button>
+        </div>
+      ) : null}
       {loading ? <p>Loading...</p> : null}
       {!loading && !gameOver ? (
         <QuestionCard
@@ -79,9 +88,15 @@ export default function Questions() {
         />
       ) : null}
       {!gameOver && !loading && userAnswers.length === number + 1 ? (
-        <button onClick={handleNextQuestion}>
+        <button
+          className={styles.question__next_btn}
+          onClick={handleNextQuestion}
+        >
           {number !== TOTAL_QUESTIONS - 1 ? (
-            <span>Next Question</span>
+            <>
+              <span>Next Question</span>
+              <ArrowRight />
+            </>
           ) : (
             <span>Show Result</span>
           )}

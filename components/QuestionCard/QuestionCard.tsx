@@ -1,5 +1,6 @@
 import { Question } from "../Question/Question";
 import { AnswerButton } from "../AnswerButton/AnswerButton";
+import styles from "./QuestionCard.module.scss";
 
 // define answer type
 export type AnswerType = {
@@ -27,13 +28,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   userAnswer,
   totalQuestions,
 }) => (
-  <div className="questionCard">
-    <span className="questionCard__number">
+  <div className={styles.questionCard}>
+    <span className={styles.questionCard__number}>
       {questionNum} / {totalQuestions}
     </span>
     {/* To avoid confusion, 'Question' component that has a 'question' prop which takes 'question' as an argument */}
     <Question question={question} />
-    <div className="questionCard__answers">
+    <div className={styles.questionCard__answers}>
       {answers.map((answer) => (
         <AnswerButton
           key={answer}

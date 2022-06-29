@@ -29,6 +29,14 @@ a {
   box-sizing: border-box;
 }
 
+button {
+  font-family: "Inter", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 :root {
   --bg: #fbf7f4;
   --bg-rgb: 251, 247, 244;
