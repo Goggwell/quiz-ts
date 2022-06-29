@@ -74,6 +74,18 @@ export default function Questions() {
           totalQuestions={TOTAL_QUESTIONS}
         />
       ) : null}
+      {!gameOver && !loading && userAnswers.length === number + 1 ? (
+        <button onClick={handleNextQuestion}>
+          {number !== TOTAL_QUESTIONS - 1 ? (
+            <span>Next Question</span>
+          ) : (
+            <span>Show Result</span>
+          )}
+        </button>
+      ) : null}
+      {gameOver && userAnswers.length === TOTAL_QUESTIONS ? (
+        <span>nice</span>
+      ) : null}
     </Container>
   );
 }
