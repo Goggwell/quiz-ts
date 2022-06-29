@@ -1,7 +1,7 @@
 import styles from "./Result.module.scss";
 
 import { AnswerType } from "../QuestionCard/QuestionCard";
-import Router from "next/router";
+import Link from "next/link";
 
 export type ResultProps = {
   answers: AnswerType[];
@@ -14,10 +14,6 @@ export const Result: React.FC<ResultProps> = ({
   score,
   totalScore,
 }) => {
-  const goToHome = () => {
-    Router.push("/");
-  };
-
   return (
     <div className={styles.result__container}>
       <table>
@@ -51,9 +47,11 @@ export const Result: React.FC<ResultProps> = ({
         <div className={styles.result__score}>
           Score: {score} / {totalScore}
         </div>
-        <button className={styles.result__finish_btn} onClick={goToHome}>
-          Finish
-        </button>
+        <Link href="/">
+          <a>
+            <button className={styles.result__finish_btn}>Finish</button>
+          </a>
+        </Link>
       </div>
     </div>
   );
