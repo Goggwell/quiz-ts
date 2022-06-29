@@ -1,4 +1,5 @@
 import { Question } from "../Question/Question";
+import { AnswerButton } from "../AnswerButton/AnswerButton";
 
 // define answer type
 export type AnswerType = {
@@ -30,12 +31,27 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     <span className="questionCard__number">
       {questionNum} / {totalQuestions}
     </span>
+    {/* To avoid confusion, 'Question' component that has a 'question' prop which takes 'question' as an argument */}
     <Question question={question} />
     <div className="questionCard__answers">
       {answers.map((answer) => (
-        <div className="questionCard__answer" key={answer}>
-          {answer}
-        </div>
+        <AnswerButton
+          key={answer}
+          state={
+            userAnswer?.isCorrect === undefined
+              ? "neutral"
+              : userAnswer.answer === answer && userAnswer.isCorrect
+              ? "correct"
+              : userAnswer.answer === answer
+              ? "incorrect"
+              : "neutral"
+          }
+          disabled={!!userAnswer}
+          value={answer}
+          onClick={callback}
+        >
+          <span dangerouslySetInnerHTML={{ __html: answer }} />
+        </AnswerButton>
       ))}
     </div>
   </div>
