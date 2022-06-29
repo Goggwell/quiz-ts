@@ -6,6 +6,7 @@ import {
   QuestionCard,
   AnswerType,
 } from "../components/QuestionCard/QuestionCard";
+import { Result } from "../components/Result/Result";
 
 const TOTAL_QUESTIONS = 10;
 
@@ -17,11 +18,13 @@ export default function Questions() {
   const [number, setNumber] = useState(0);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [gameStarted, setGameStarted] = useState(false);
 
   // init game configs and start game
   const startQuiz = async () => {
     // waits for questions to be fetched, and displays an error if not resolved
     try {
+      setGameStarted(true);
       setLoading(true);
       setGameOver(false);
       const quizQuestions = await fetchQuestions(state.quizDifficulty);
@@ -53,6 +56,7 @@ export default function Questions() {
     }
   };
 
+  // handle moving to next question after submitting answer, and end if TOTAL_QUESTIONS is reached
   const handleNextQuestion = () => {
     const nextQuestion = number + 1;
     nextQuestion === TOTAL_QUESTIONS
@@ -62,7 +66,7 @@ export default function Questions() {
 
   return (
     <Container>
-      {gameOver ? <button onClick={startQuiz}>START QUIZ</button> : null}
+      {!gameStarted ? <button onClick={startQuiz}>START QUIZ</button> : null}
       {loading ? <p>Loading...</p> : null}
       {!loading && !gameOver ? (
         <QuestionCard
@@ -84,7 +88,11 @@ export default function Questions() {
         </button>
       ) : null}
       {gameOver && userAnswers.length === TOTAL_QUESTIONS ? (
-        <span>nice</span>
+        <Result
+          answers={userAnswers}
+          score={score}
+          totalScore={TOTAL_QUESTIONS}
+        />
       ) : null}
     </Container>
   );

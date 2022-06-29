@@ -1,3 +1,4 @@
+// define props of AnswerButton component
 export type AnswerButtonProps = {
   children: React.ReactNode;
   disabled?: boolean;
