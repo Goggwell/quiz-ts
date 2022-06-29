@@ -10,6 +10,16 @@
   transition: 200ms ease;
   z-index: 2;
 
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.correct,
+  &.incorrect {
+    opacity: 1;
+  }
+
   &.correct {
     color: #37ecba;
   }
@@ -68,9 +78,5 @@
     &::after {
       opacity: 1;
     }
-  }
-
-  &:disabled {
-    pointer-events: none;
   }
 }
