@@ -47,7 +47,7 @@ const Container = (props: any) => {
               </svg>
             )}
           </button>
-          <h3 className={styles.logo}>SAMUEL</h3>
+          <h3 className={styles.logo}>OpenTDB Quiz</h3>
         </nav>
         <main className={styles.container__content}>{children}</main>
       </div>
