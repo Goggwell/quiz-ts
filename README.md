@@ -5,7 +5,7 @@ A trivia game that pulls data from OpenTDB. Uses React/NextJS with TypeScript
 ## Stack
 
 - React
-- NextJS
+- NextJS (12, pages router)
 - TypeScript
 - react-sweet-state (for global state management)
 - SCSS
@@ -23,13 +23,13 @@ A trivia game that pulls data from OpenTDB. Uses React/NextJS with TypeScript
 ```shell
 cd <project-name>
 
-# npm
-npm i
-npm run dev
+# pnpm
+pnpm i
+pnpm dev
 
-# yarn
-yarn
-yarn dev
+# bun
+bun i
+bun dev
 ```
 
 ### [MIT License](https://opensource.org/licenses/MIT)
